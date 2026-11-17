@@ -101,18 +101,18 @@ struct device_context {
 | NVS Offset | Size | Device | Register | Default | Description |
 |------------|------|--------|----------|---------|-------------|
 | 0x3122 | 1 | Master Osc | 0 | 0x20 | Master oscillator config (bits 6-4 select frequency) |
-| 0x3128 | 1 | IC5002/4 | 5 | 0x84 | XDR clock generator register 5 |
-| 0x3129 | 1 | IC5002/4 | 6 | 0x16 | XDR clock generator register 6 |
-| 0x312C | 1 | IC5003 | 5 | 0x84 | CELL clock generator register 5 |
-| 0x312D | 1 | IC5003 | 6 | 0x16 | CELL clock generator register 6 |
+| 0x3128 | 1 | IC5002/4 | 5 | 0x84 | CELL clock generator register 5 |
+| 0x3129 | 1 | IC5002/4 | 6 | 0x16 | CELL clock generator register 6 |
+| 0x312C | 1 | IC5003 | 5 | 0x84 | XDR clock generator register 5 |
+| 0x312D | 1 | IC5003 | 6 | 0x16 | XDR clock generator register 6 |
 
 (Sherwood)
 | NVS Offset | Size | Register | Default | Description |
 |------------|------|----------|---------|-------------|
-| 0x61 | 1 | 5 | 0x84 | XDR clock generator register 5 |
-| 0x62 | 1 | 6 | 0x16 | XDR clock generator register 6 |
-| 0x63 | 1 | 5 | 0x84 | CELL clock generator register 5 |
-| 0x64 | 1 | 6 | 0x16 | CELL clock generator register 6 |
+| 0x61 | 1 | 5 | 0x84 | CELL clock generator register 5 |
+| 0x62 | 1 | 6 | 0x16 | CELL clock generator register 6 |
+| 0x63 | 1 | 5 | 0x84 | XDR clock generator register 5 |
+| 0x64 | 1 | 6 | 0x16 | XDR clock generator register 6 |
 
 ### Default Value Behavior
 
@@ -124,16 +124,16 @@ nvs_read(0x3122, v5, 1);
 if (v5[0] == 0xFF) v5[0] = 0x20;  // Default master osc config
 
 nvs_read(0x3128, v5, 1);
-if (v5[0] == 0xFF) v5[0] = 0x84;  // Default XDR reg5
-
-nvs_read(0x3129, v5, 1);
-if (v5[0] == 0xFF) v5[0] = 0x16;  // Default XDR reg6 (22 decimal)
-
-nvs_read(0x312C, v5, 1);
 if (v5[0] == 0xFF) v5[0] = 0x84;  // Default CELL reg5
 
+nvs_read(0x3129, v5, 1);
+if (v5[0] == 0xFF) v5[0] = 0x16;  // Default CELL reg6 (22 decimal)
+
+nvs_read(0x312C, v5, 1);
+if (v5[0] == 0xFF) v5[0] = 0x84;  // Default XDR reg5
+
 nvs_read(0x312D, v5, 1);
-if (v5[0] == 0xFF) v5[0] = 0x16;  // Default CELL reg6
+if (v5[0] == 0xFF) v5[0] = 0x16;  // Default XDR reg6
 ```
 
 ---
@@ -2494,7 +2494,7 @@ Benchmark testing confirmed that MIC_CMD_DUR (entry 16) is the only register tha
 - [Sampsonay](https://www.youtube.com/@Sampsonay/) - Testing clock generator register values
 - [gypsy](https://www.github.com/losgatosbandidos/) - Testing clock generator register values
 - [RGBeter](https://x.com/RGBeter32X) - Testing clock generator register values
-- [sage](https://github.com/sagemono/) - Reverse engineering, documentation, XDR timing research
+- [An Anonymous User] - Reverse engineering, documentation, XDR timing research
 - PS3DevWiki contributors - Hardware documentation
 - graf_chokolo - Syscon communication research
 
