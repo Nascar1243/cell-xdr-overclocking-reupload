@@ -6,7 +6,7 @@ Reverse engineering of the PlayStation 3's clock generation, XDR memory timing c
 
 ## **Disclaimer:** This is not a guide. This is experimental research that may cause irreversible damage to your system. There is a team working behind this and it is still in the experimental stage. We are not responsible for any damaged systems. If you're following along, you're doing so at your own risk.
 
-## Please be aware that this is currently only functional on CECH-2001A PS3 models and prior (and there may be exceptions even among those, which we are currently investigating). Please also note that, depending on Cell process node (90nm, 65nm, 45nm), different overlock ceilings will be achievable, and in most cases, overvolting will be required to achieve them. If you're following along, you're doing so at your own risk.
+## Please be aware that this is currently only functional on CECH-2001A PS3 models and prior with the ICS Clock Gen Chipset (and there may be exceptions even among those, which we are currently investigating). Please also note that, depending on Cell process node (90nm, 65nm, 45nm), different overlock ceilings will be achievable, and in most cases, overvolting will be required to achieve them. If you're following along, you're doing so at your own risk.
 
 ---
 
